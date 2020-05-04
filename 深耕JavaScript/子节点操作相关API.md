@@ -5,5 +5,6 @@
 ## firstChild
 1. 只读属性，返回父级节点的第一个子元素，如果没有子节点则返回`null`
 2. 会包含换行符，制表符，回车符，空格符等特殊的文本节点，所以除非以压缩的形式写代码，否则在获取元素时可能要用`nodeType`进行一次判断以排除文本节点。下图是nodeType的节点类型
-  ![nodeType](/深耕JavaScript/2020-05-02-21-46-45.png)
    
+
+   https://felicity-gao.github.io/blog/img/20200503134941.png
