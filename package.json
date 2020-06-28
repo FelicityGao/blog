@@ -1,0 +1,22 @@
+{
+  "name": "blog",
+  "version": "1.0.0",
+  "description": "记录一些自己的学习心得体会，以备查漏补缺 ## [vscode 相关](/vscode相关/README.md) ## [Vue 进阶](/Vue进阶/README.md) ## [深耕JavaScript](/深耕JavaScript/READEME.md)",
+  "main": "index.js",
+  "scripts": {
+    "dev": "vuepress dev docs",
+    "build": "vuepress build docs",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Felicity-Gao/blog.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Felicity-Gao/blog/issues"
+  },
+  "homepage": "https://github.com/Felicity-Gao/blog#readme"
+}
