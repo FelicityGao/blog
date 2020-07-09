@@ -1,4 +1,5 @@
-  # 易错点整理
+# 基础知识
+  ## 易错点整理
   ### 1. 生僻语句
   1. label 语句：label 可以在代码中添加标签，一般在for循环中跟`break`和`continue`配合使用
    ```javascript
