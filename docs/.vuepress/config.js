@@ -16,9 +16,15 @@ module.exports = {
       {
         text: '分类指引', items: [
           { text: 'Js', link: '/Js/' },
+          { text: 'RegExp', link: '/RegExp/' },
           { text: 'Vue', link: '/Vue/' },
           { text: 'React', link: '/React/' },
           { text: 'Vscode', link: '/Vscode/' }
+        ]
+      },
+      {
+        text: '延伸拓展', items: [
+          { text: '交互设计', link: '/交互设计/' },
         ]
       },
       { text: 'GitHub', link: 'https://github.com/Felicity-Gao' },
