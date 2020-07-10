@@ -1,5 +1,5 @@
 module.exports = {
-  base: '/Blog_view/',
+  base: '/',
   title: "Felicity的笔记本",
   description: '旧书不厌百回读，熟读深思子自知',
   head: [ // 注入到当前页面的 HTML <head> 中的标签
