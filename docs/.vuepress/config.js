@@ -45,7 +45,8 @@ module.exports = {
           title: '深入学习',   // 必要的
           sidebarDepth: 1,    // 可选的, 默认值是 1
           children: [
-            '防抖与节流'
+            '防抖与节流',
+            '设计模式'
           ]
         }
       ],
