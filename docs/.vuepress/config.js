@@ -34,7 +34,7 @@ module.exports = {
       '/Js/': [
         {
           title: 'JS基础',   // 必要的
-          sidebarDepth: 1,    // 可选的, 默认值是 1
+          sidebarDepth: 0,    // 可选的, 默认值是 1
           children: [
             '',
             '数组操作方法',
@@ -44,7 +44,7 @@ module.exports = {
         },
         {
           title: '深入学习',   // 必要的
-          sidebarDepth: 1,    // 可选的, 默认值是 1
+          sidebarDepth: 0,    // 可选的, 默认值是 1
           children: [
             '高阶函数',
             '事件循环机制',
@@ -56,7 +56,7 @@ module.exports = {
       '/React/': [
         {
           title: 'React',   // 必要的
-          sidebarDepth: 1,    // 可选的, 默认值是 1
+          sidebarDepth: 0,    // 可选的, 默认值是 1
           children: [
             '',      /* /React/ */
             'ref', /* /React/ref.html */
