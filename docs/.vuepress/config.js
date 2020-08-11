@@ -19,7 +19,8 @@ module.exports = {
           { text: 'RegExp', link: '/RegExp/' },
           { text: 'Vue', link: '/Vue/' },
           { text: 'React', link: '/React/' },
-          { text: 'Vscode', link: '/Vscode/' }
+          { text: 'Vscode', link: '/Vscode/' },
+          { text: '数据结构与算法', link: '/数据结构与算法/' }
         ]
       },
       {
@@ -65,7 +66,18 @@ module.exports = {
         }
 
       ],
+      '/数据结构与算法/': [
+        {
+          title: '数据结构与算法',   // 必要的
+          sidebarDepth: 0,    // 可选的, 默认值是 1
+          children: [
+            '',    /* /数据结构与算法/ */
+            '栈',
+            '队列'
+          ]
+        }
 
+      ],
       // fallback
       '/': [
         ''        /* / */
