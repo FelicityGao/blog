@@ -17,7 +17,7 @@ module.exports = {
         text: '分类指引', items: [
           { text: 'Js', link: '/Js/' },
           { text: 'RegExp', link: '/RegExp/' },
-          { text: 'Vue', link: '/Vue/' },
+          { text: 'Vue', link: '/Vue/Vue基础/插槽' },
           { text: 'React', link: '/React/umiJs' },
           { text: 'Vscode', link: '/Vscode/主题及配色' },
           { text: '数据结构与算法', link: '/数据结构与算法/' }
