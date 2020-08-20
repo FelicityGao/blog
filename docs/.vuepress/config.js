@@ -18,8 +18,8 @@ module.exports = {
           { text: 'Js', link: '/Js/' },
           { text: 'RegExp', link: '/RegExp/' },
           { text: 'Vue', link: '/Vue/' },
-          { text: 'React', link: '/React/' },
-          { text: 'Vscode', link: '/Vscode/' },
+          { text: 'React', link: '/React/umiJs' },
+          { text: 'Vscode', link: '/Vscode/主题及配色' },
           { text: '数据结构与算法', link: '/数据结构与算法/' }
         ]
       },
@@ -59,12 +59,33 @@ module.exports = {
           title: 'React',   // 必要的
           sidebarDepth: 0,    // 可选的, 默认值是 1
           children: [
-            '',      /* /React/ */
             'ref', /* /React/ref.html */
             'umiJs'   /* /React/umiJs.html */
           ]
         }
 
+      ],
+      '/Vue/': [
+        {
+          title: 'Vue基础',   // 必要的
+          sidebarDepth: 1,    // 可选的, 默认值是 1
+          children: [
+            ['Vue基础/插槽', '插槽'],
+            ['Vue基础/父子组件', '父子组件'],
+          ]
+        },
+        {
+          title: '源码解析',   // 必要的
+          sidebarDepth: 0,    // 可选的, 默认值是 1
+          children: [
+            ['源码解析/入口文件及编译实现', '入口文件及编译实现'],  // [link, text]
+          ]
+        }
+
+      ],
+      '/Vscode/': [
+        '插件',
+        '主题及配色'
       ],
       '/数据结构与算法/': [
         {
@@ -76,12 +97,12 @@ module.exports = {
             '队列',
             '链表',
             '字典',
-            '散列'
+            '散列',
+            '集合'
           ]
         }
 
       ],
-      // fallback
       '/': [
         ''        /* / */
       ]
