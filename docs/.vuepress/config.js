@@ -16,7 +16,6 @@ module.exports = {
       {
         text: '分类指引', items: [
           { text: 'Js', link: '/Js/' },
-          { text: 'RegExp', link: '/RegExp/' },
           { text: 'Vue', link: '/Vue/Vue基础/插槽' },
           { text: 'React', link: '/React/umiJs' },
           { text: 'Vscode', link: '/Vscode/主题及配色' },
@@ -47,10 +46,9 @@ module.exports = {
           title: '深入学习',   // 必要的
           sidebarDepth: 0,    // 可选的, 默认值是 1
           children: [
-            '高阶函数',
-            '事件循环机制',
             '防抖与节流',
-            '设计模式'
+            '设计模式',
+            '高阶函数'
           ]
         }
       ],
@@ -72,7 +70,7 @@ module.exports = {
           children: [
             ['Vue基础/插槽', '插槽'],
             ['Vue基础/父子组件', '父子组件'],
-            ['Vue基础/功能辨析', '功能辨析'],
+            ['Vue基础/计算属性', '计算属性'],
           ]
         },
         {
