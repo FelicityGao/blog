@@ -1,4 +1,5 @@
 # Ref
+Refs 提供了一种方式，允许我们访问 DOM 节点或在 render 方法中创建的 React 元素。
 ## React.createRef
 自React16.3版本后Refs 是通过 React.createRef() 创建的，并通过 ref 属性附加到 React 元素。在构造组件时，通常将 Refs 分配给实例属性，以便可以在整个组件中引用它们。
 ``` jsx

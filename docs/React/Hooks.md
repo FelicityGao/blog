@@ -76,18 +76,44 @@ const value = useContext(MyContext);
 
 ## 其他Hook
 
-### useReducer
+### 1. useRef
 
 ```js
-const [state, dispatch] = useReducer(reducer, initialArg, init);
+const refContainer = useRef(initialValue);
 ```
-### useCallback
+`useRef` 返回一个可变的 `ref` 对象，其 `.current` 属性被初始化为传入的参数`（initialValue）`。返回的 ref 对象在组件的整个生命周期内`保持不变`。
+
+`useRef()` 创建的是一个**普通 Javascript 对象**, `useRef()` 和自建一个 `{current: ...}` 对象的唯一区别是，`useRef` 会在每次渲染时返回同一个 `ref` 对象。
+
+### 2. useImperativeHandle
 
 ```js
-const memoizedCallback = useCallback(
-  () => {
-    doSomething(a, b);
-  },
-  [a, b],
-);
+useImperativeHandle(ref, createHandle, [deps])
 ```
+`useImperativeHandle` 可以让你在使用 `ref` 时自定义暴露给父组件的实例值。在大多数情况下，应当避免使用 ref 这样的命令式代码。`useImperativeHandle` 应当与 `forwardRef` 一起使用：
+
+```js
+function FancyInput(props, ref) {
+  const inputRef = useRef();
+  useImperativeHandle(ref, () => ({
+    focus: () => {
+      inputRef.current.focus();
+    }
+  }));
+  return <input ref={inputRef} ... />;
+}
+FancyInput = forwardRef(FancyInput);
+
+// 父组件
+function Father(){
+  // ……
+  const fInput = useRef()
+  // ....
+  fInput.current.focus()
+  //……
+  <FancyInput ref={fInput} />
+}
+```
+在本例中，渲染 `<FancyInput ref={inputRef} />` 的父组件`finput`可以调用 `inputRef.current.focus()`。
+
+还有：useMemo、useCallback、useReducer、useLayoutEffect、useDebugValue。目前没用到，用到后再补充。
