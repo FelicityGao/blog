@@ -53,5 +53,8 @@ class CustomTextInput extends React.Component {
 react 会在挂载的时候调用`ref`的回调并把dom元素传入，会在卸载的时候再次调用并传入`null`
 **注**： 
 1. 你不能在函数组件上使用 ref 属性，因为他们没有实例。
-2. 以前使用的 `this.refs.textInput` 这种方式并不能访问 到refs ，必须使用回调函数或 createRef API 的方式代替。
+2. 以前使用的 `this.refs.textInput` 这种方式并不能访问到refs ，必须使用回调函数或 createRef API 的方式代替。
+
+## React.forwardRef
+
 

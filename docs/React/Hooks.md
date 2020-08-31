@@ -55,3 +55,39 @@ useEffect(() => {
 ```
 
 > 如果想执行只运行一次的 effect（仅在组件挂载和卸载时执行），可以传递一个空数组（[]）作为第二个参数。
+
+## Context Hook
+`useContext` 接收一个**context 对象**(React.createContext 的返回值)并返回该 context 的当前值。当前的 context 值由上层组件中距离当前组件最近的 `<MyContext.Provider>` 的 value prop 决定。
+**注：**必须是contesxt对象，不能传入`MyContext.Consumer`之类的context的属性。
+
+```js
+const value = useContext(MyContext);
+```
+
+> useContext(MyContext) 相当于 class 组件中的 `static contextType = MyContext` 或者 `<MyContext.Consumer>`。
+
+调用了 useContext 的组件总会在 context 值变化时**重新渲染**。如果重渲染组件的开销较大，你可以 通过使用 memoization 来优化。
+
+
+## 自定义Hook
+自定义Hook是为了把一些需要使用使用到Hook的函数封装为可复用的组件时使用的。（因为Hook规则不允许Hook出现在别的组件中，会导致运行错误）
+
+自定义Hook实际上就是一个函数，但它比较特别的是必须使用**use**开头，这样React内部就会自动识别它为Hook，将其置为顶层函数，提前执行。噢，还有这个函数就可以在内部调用其他Hook了。
+
+## 其他Hook
+
+### useReducer
+
+```js
+const [state, dispatch] = useReducer(reducer, initialArg, init);
+```
+### useCallback
+
+```js
+const memoizedCallback = useCallback(
+  () => {
+    doSomething(a, b);
+  },
+  [a, b],
+);
+```
