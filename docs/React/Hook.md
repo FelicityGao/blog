@@ -31,6 +31,9 @@ setState((prevState) => {
   return { ...prevState, ...updatedValues }
 })
 ```
+::: tip
+原地修改 state 并调用 setState **不会**引起重新渲染。
+:::
 
 ## Effect Hook
 
@@ -85,6 +88,10 @@ const refContainer = useRef(initialValue);
 
 `useRef()` 创建的是一个**普通 Javascript 对象**, `useRef()` 和自建一个 `{current: ...}` 对象的唯一区别是，`useRef` 会在每次渲染时返回同一个 `ref` 对象。
 
+::: tip 注意
+因为在Hooks中每次都会重新调用函数，所以是没有常量这个概念的，也可以利用`useRef`的特性，用他的`current`来保存常量。保存在`current`中的值是不会随着hook的调用而改变的，如果你不进行操作的话。
+:::
+
 ### 2. useImperativeHandle
 
 ```js
@@ -116,4 +123,10 @@ function Father(){
 ```
 在本例中，渲染 `<FancyInput ref={inputRef} />` 的父组件`finput`可以调用 `inputRef.current.focus()`。
 
-还有：useMemo、useCallback、useReducer、useLayoutEffect、useDebugValue。目前没用到，用到后再补充。
+### 3. useMemo
+```js
+const memoizedValue = useMemo(() => computeExpensiveValue(a, b), [a, b]);
+```
+可以把第一个参数的函数缓存起来从而达到`优化性能`的结果。会根据第二个参数的变化情况来调用第一个参数传入函数。只有当第二个参数的数组中的值发生改变时才会重新调用函数计算结果。如果没有提供第二个参数就会每次都调用了。感觉跟vue的计算属性差不多的功能。
+
+还有：useCallback、useReducer、useLayoutEffect、useDebugValue。目前没用到，用到后再补充。
