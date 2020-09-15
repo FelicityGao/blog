@@ -19,7 +19,8 @@ module.exports = {
           { text: 'Vue', link: '/Vue/Vue基础/插槽' },
           { text: 'React', link: '/React/umiJs' },
           { text: 'Vscode', link: '/Vscode/主题及配色' },
-          { text: '数据结构与算法', link: '/数据结构与算法/' }
+          { text: '数据结构与算法', link: '/数据结构与算法/' },
+          { text: 'TS', link: '/TS/' }
         ]
       },
       {
@@ -68,8 +69,7 @@ module.exports = {
           title: 'TS',   // 必要的
           sidebarDepth: 0,    // 可选的, 默认值是 1
           children: [
-            '基础知识',
-            '高级用法'
+            '高级类型',
           ]
         }
       ],
