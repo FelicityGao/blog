@@ -62,12 +62,21 @@ module.exports = {
             'Hook'
           ]
         }
-
+      ],
+      '/TS/': [
+        {
+          title: 'TS',   // 必要的
+          sidebarDepth: 0,    // 可选的, 默认值是 1
+          children: [
+            '基础知识',
+            '高级用法'
+          ]
+        }
       ],
       '/Vue/': [
         {
-          title: 'Vue基础',   // 必要的
-          sidebarDepth: 1,    // 可选的, 默认值是 1
+          title: 'Vue基础',
+          sidebarDepth: 1,
           children: [
             ['Vue基础/插槽', '插槽'],
             ['Vue基础/父子组件', '父子组件'],
@@ -75,8 +84,7 @@ module.exports = {
           ]
         },
         {
-          title: '源码解析',   // 必要的
-          sidebarDepth: 0,    // 可选的, 默认值是 1
+          sidebarDepth: 0,
           children: [
             ['源码解析/入口文件及编译实现', '入口文件及编译实现'],  // [link, text]
           ]
