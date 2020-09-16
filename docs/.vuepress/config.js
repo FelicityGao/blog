@@ -20,7 +20,7 @@ module.exports = {
           { text: 'React', link: '/React/umiJs' },
           { text: 'Vscode', link: '/Vscode/主题及配色' },
           { text: '数据结构与算法', link: '/数据结构与算法/' },
-          { text: 'TS', link: '/TS/' }
+          { text: 'TS', link: '/TS/高级类型' }
         ]
       },
       {

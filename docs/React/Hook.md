@@ -127,6 +127,65 @@ function Father(){
 ```js
 const memoizedValue = useMemo(() => computeExpensiveValue(a, b), [a, b]);
 ```
-可以把第一个参数的函数缓存起来从而达到`优化性能`的结果。会根据第二个参数的变化情况来调用第一个参数传入函数。只有当第二个参数的数组中的值发生改变时才会重新调用函数计算结果。如果没有提供第二个参数就会每次都调用了。感觉跟vue的计算属性差不多的功能。
+可以把第一个参数的函数缓存起来从而达到`优化性能`的结果。会根据第二个参数的变化情况来调用第一个参数传入函数。只有当第二个参数（deps）的数组中的值发生改变时才会重新调用函数计算结果。如果没有提供第二个参数就会每次都调用了。感觉跟vue的计算属性差不多的功能。
+
+我们按照下面这样写的时候，每次点击按钮就会触发`Example`重新render,其返回的 React Element 也将重新渲染，由于 `{main}`包含的`Element`节点也将会重新渲染，如果其render时消耗特别大的话就会造成卡顿。因为在`setCount`的时候，`main`并没有变化，所以，实际上我们可以把它缓存起来。
+```js
+function Example(props) {
+    const [count, setCount] = useState(0);
+    const [foo] = useState("foo");
+
+    const main = (
+        <div>
+            <Item key={1} x={1} foo={foo} />
+            <Item key={2} x={2} foo={foo} />
+            <Item key={3} x={3} foo={foo} />
+            <Item key={4} x={4} foo={foo} />
+            <Item key={5} x={5} foo={foo} />
+        </div>
+    );
+
+    return (
+        <div>
+            <p>{count}</p>
+            <button onClick={() => setCount(count + 1)}>setCount</button>
+            {main}
+        </div>
+    );
+}
+```
+
+优化后： 
+```js
+function Example(props) {
+    const [count, setCount] = useState(0);
+    const [foo] = useState("foo");
+
+    const main = useMemo(() => (
+        <div>
+            <Item key={1} x={1} foo={foo} />
+            <Item key={2} x={2} foo={foo} />
+            <Item key={3} x={3} foo={foo} />
+            <Item key={4} x={4} foo={foo} />
+            <Item key={5} x={5} foo={foo} />
+        </div>
+    ), [foo]);
+
+    return (
+        <div>
+            <p>{count}</p>
+            <button onClick={() => setCount(count + 1)}>setCount</button>
+            {main}
+        </div>
+    );
+}
+```
+只有当`foo`变化时`main`才会重新render, `foo`不变时就会直接返回上次结果。从而使子组件跳过此次渲染。
+
+:::tip 注意
+useMemo 会额外带来空间成本（缓存上一次的结果）了，所以使用时需要衡量，不可滥用。
+如：当`deps`依赖数组为空时，说明你只是希望存储一个值，这个值在重新 render 时永远不会变。这时可以使用`useRef`替换或者直接第一一个常量。
+:::
+
 
 还有：useCallback、useReducer、useLayoutEffect、useDebugValue。目前没用到，用到后再补充。
