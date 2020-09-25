@@ -61,7 +61,8 @@ module.exports = {
           children: [
             'ref', /* /React/ref.html */
             'umiJs',   /* /React/umiJs.html */
-            'Hook'
+            'Hook',
+            'redux'
           ]
         }
       ],
