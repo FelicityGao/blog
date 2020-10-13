@@ -72,6 +72,7 @@ module.exports = {
           sidebarDepth: 0,    // 可选的, 默认值是 1
           children: [
             '高级类型',
+            '高级用法',
           ]
         }
       ],
