@@ -11,15 +11,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Felicity-Gao/blog.git"
+    "url": "git+https://github.com/FelicityGao/blog.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/Felicity-Gao/blog/issues"
+    "url": "https://github.com/FelicityGao/blog/issues"
   },
-  "homepage": "https://github.com/Felicity-Gao/blog#readme",
+  "homepage": "https://github.com/FelicityGao/blog#readme",
   "devDependencies": {
     "vuepress": "^1.5.4"
   }
